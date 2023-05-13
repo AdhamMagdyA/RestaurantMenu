@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav, Form, Button, Row } from "react-bootstrap";
+import { Navbar, Container, Nav, Form, Row } from "react-bootstrap";
 
 function NavBar({ filterBySearch }) {
   const handleSearch = (e) => {
