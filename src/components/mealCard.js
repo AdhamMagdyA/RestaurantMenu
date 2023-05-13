@@ -1,22 +1,20 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-function MealCard() {
+function MealCard({ meal }) {
   return (
-    <Card className="d-flex flex-row">
-      <Card.Img variant="start" src="1.png" className="w-25 rounded" />
+    <Card className="d-flex flex-row my-2">
+      <Card.Img variant="start" src={meal.image} className="w-25 rounded" />
       <Card.Body>
         <Card.Title className="d-flex justify-content-between">
           <div style={{ fontWeight: "bold" }} className="fs-4">
-            حواوشى
+            {meal.name}
           </div>
           <div className="text-danger">
-            20 <span className="text-muted">جنيه</span>
+            {meal.price} <span className="text-muted">جنيه</span>
           </div>
         </Card.Title>
-        <Card.Text className="text-muted">
-          اجمد حواوشي ممكن تاكله في حياتك يا صاحبي
-        </Card.Text>
+        <Card.Text className="text-muted">{meal.description}</Card.Text>
       </Card.Body>
     </Card>
   );
