@@ -1,7 +1,13 @@
 import React from "react";
 import { Navbar, Container, Nav, Form, Button, Row } from "react-bootstrap";
 
-function NavBar() {
+function NavBar({ filterBySearch }) {
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(e.target.value);
+    filterBySearch(e.target.value);
+  };
+
   return (
     <Row>
       <Navbar bg="dark" expand="lg" className="d-flex" variant="dark">
@@ -23,8 +29,8 @@ function NavBar() {
                 className=" mx-2"
                 aria-label="Search"
                 color="warning"
+                onChange={handleSearch}
               />
-              <Button variant="outline-warning">بحث</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

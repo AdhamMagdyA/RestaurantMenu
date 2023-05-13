@@ -19,14 +19,20 @@ function App() {
     setMealsData(filteredMeals);
   };
 
-  // remove filters
+  // remove tag filters
   const removeFilters = () => {
     setMealsData(meals);
   };
 
+  // filter by search bar
+  const filterBySearch = (search) => {
+    const filteredMeals = meals.filter((meal) => meal.name.includes(search));
+    setMealsData(filteredMeals);
+  };
+
   return (
     <div className="App">
-      <NavBar />
+      <NavBar filterBySearch={filterBySearch} />
       <Container>
         <Header />
         <Tags
