@@ -13,7 +13,14 @@ function NavBar({ filterBySearch }) {
       <Navbar bg="dark" expand="lg" className="d-flex" variant="dark">
         <Container>
           <Navbar.Brand href="#" className="text-warning">
-            المطعم
+            {/* المطعم */}
+            <img
+              src="logo.png"
+              alt="logo"
+              width="100"
+              height="40"
+              className="d-inline-block align-text-top mx-2"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
