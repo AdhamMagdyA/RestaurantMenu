@@ -10,12 +10,30 @@ import { useState } from "react";
 function App() {
   const [mealsData, setMealsData] = useState(meals);
 
+  // get the unique tags
+  const tags = [...new Set(meals.map((meal) => meal.tag))];
+
+  //filter by tag function
+  const filterByTag = (tag) => {
+    const filteredMeals = meals.filter((meal) => meal.tag === tag);
+    setMealsData(filteredMeals);
+  };
+
+  // remove filters
+  const removeFilters = () => {
+    setMealsData(meals);
+  };
+
   return (
     <div className="App">
       <NavBar />
       <Container>
         <Header />
-        <Tags />
+        <Tags
+          tags={tags}
+          filterMenu={filterByTag}
+          removeFilters={removeFilters}
+        />
         <MenuList meals={mealsData} />
       </Container>
     </div>
